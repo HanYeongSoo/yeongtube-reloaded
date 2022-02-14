@@ -1,5 +1,7 @@
 2022-02-11 유튜브 시작
 
+*****Set Up 시작 *****
+
 1. Node JS 란? 
 	.- 크롬 V8 자바스크립트 엔진으로 빌드 된 자바스크립트 런타임
 	.- 즉 브라우져 밖에서 돌아가는 자바스크립트!!
@@ -62,7 +64,20 @@
 		.- npm i nodemon --save-dev 를 설치 후 script쪽을 nodemon --exec babel-node index.js로 수정
 		.- 그 이후에 변경사항이 있으면 자동으로 실행을 해줌 (일일히 저장하고 npm run ~~이런걸 안해도 된다는 뜻)
 
+*****Set Up 끝 *****
+
+***** INTRODUCTION TO EXPRESS 시작 *****
 	
+	express를 사용하기 위한 설계
+	1. express application을 만든다.
+		.- express function()을 사용하면 express application을 생성해 줌
+	2. express가 listen 하게 설정해야 한다
+		.- ?? listen이 뭐지?
+		.- reqeust(요청)가 들어오면 listen을 해주는 것이 Server의 기본 동작
+	3. Server를 만들어보자
+		.- server.js에 코드 정리 해놨음
+
+	4. 
 
 
 
