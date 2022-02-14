@@ -1,0 +1,76 @@
+2022-02-11 유튜브 시작
+
+1. Node JS 란? 
+	.- 크롬 V8 자바스크립트 엔진으로 빌드 된 자바스크립트 런타임
+	.- 즉 브라우져 밖에서 돌아가는 자바스크립트!!
+	
+	.- 브라우저 밖에서도 자바스크립트가 된다 => 백앤드도 가능, 이미지 파일 처리도 가능, 계산도 가능, 삭제도 가능, 파일 업로드도 가능....
+	
+
+2. npm 이란?
+	.- 자바스크립트를 위한 패키지 매니저
+	.- npm과 nodeJS는 같이 써야함
+	.- node명령어 보다는  npm명령어를 많이 쓸 예정
+
+	.- 여러 사람들이 만든 패키지를 npm을 통해서 공유가 가능 -> 개발이 좀 더 쉬움
+
+
+3. 프로젝트 생성 해보자!
+	1. 폴더를 만든다 2.package.json이라는 파일을 만든다.
+	
+	*중요*
+	.- 윈도우터미널 접근 후 ~ 검색 code yeongtube 검색하면 vs code로 그 폴더를 실행하므로 앞으로 이렇게 접근해야 함!!!
+
+	.- json이란 ? -> 프로그래머가 파일에 정보를 저장하기 위해 만든 방식 중 하나
+		.- 파일이름을 무조건 package.json로 만들 것
+	
+	* 프로젝트 생성 전에 해야할 작업1.*
+	.- 터미널에서 깃 연동을 한 후 npm init을 실행하면 자동으로 package.json이 생성됨
+	.- 필요한 부분은 입력하고 엔터를 누르면 생성이 완료
+
+	2. package.json의 기능 중 하나 -> scripts!!
+		.- node 로 직접 입력 안하고 npm run 이름으로 호출하면 바로 실행이 가능
+		.- 이 기능을 왜 쓰냐?? --> 나중에 서버를 실행할 script, css를 포함하고 있는 script, 웹사이트에 빌드하고 배포하는 script등등
+			엄청 많은 script가 있을텐데 그것들은 관리하기가 쉽지
+	
+	3. 서버를 만들어보자
+		.- 터미널에서 npm install(i) express를 실행
+		.- express를 쓰기위해선 다른 패키지도 필요함
+		.- dependencies는 그 패키지를 사용하기 위해서 필요한 패키지를 모아둔 곳
+		
+
+2022-02-14
+	
+	1. 프로젝트를 공유하기 쉽게 할 수 있는 방법 (nodeJS 사용 시)
+		.- package.json에 있는 dependencies를 보고 npm i 만 입력해도 자동으로 설치를 해줌 -> 그만큼 중요한 곳!!
+		.- 즉 package.json과 package-lock.json, index.js만 공유하면 프로젝트 공유가 쉽게 가능하다는 뜻
+		.- express를 실행하기 위해선 index.js에
+			const express = require("express");
+			const app = express();
+			를 추가
+			
+	2. babel이란?
+		.- nodeJS가 이해하지 못하는 최신 자바스크립트코드를 컴파일 해줌 === 최신코드를 쓸 수 있다
+		.- npm install --save-dev @babel/core 에서 --save-dev가 뭐지?
+		.- dependencies는 프로젝트에 필요한 것 // devDependencies는 개발자가 필요한 것
+		.- babeljs.io에 setup에 가면 설치방법 1~4번으로 나와있음
+	
+	3. nodemon ? 
+		.- npm install --save-dev @babel/node 를 추가 후 package.json에서 script쪽을 babel-node index.js로 바꿔준다.
+		.- 그러면 import express from "사용하려는거" 로 코드를 수정해서 사용이 가능함
+		
+		.- npm i nodemon --save-dev 를 설치 후 script쪽을 nodemon --exec babel-node index.js로 수정
+		.- 그 이후에 변경사항이 있으면 자동으로 실행을 해줌 (일일히 저장하고 npm run ~~이런걸 안해도 된다는 뜻)
+
+	
+
+
+
+
+
+
+
+
+
+
+
