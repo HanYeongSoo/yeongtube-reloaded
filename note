@@ -77,7 +77,10 @@
 	3. Server를 만들어보자
 		.- server.js에 코드 정리 해놨음
 
-	4. 
+	4. app.get("url 요청 주소", 함수이름) 으로 요청할 수 있음  ==> request를 받으면 .get에서 호출
+
+	5.  .get() 안에는 argument인자로 두 개의 object가 있음 앞에는 request object, 뒤에는 response object를 가지고 있음!!
+
 
 
 
