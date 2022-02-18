@@ -4,32 +4,18 @@
 import express from "express";
 import morgan from "morgan";
 
+import globalRouter from "./routers/globalRouter";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
+
 const PORT = 4000;
 
 const app = express(); // 이 한줄이 express application을 사용할 수 있게 해줌
 const logger = morgan("dev");
 app.use(logger);
 
-const globalRouter = express.Router();
-
-const handleHome = (req, res) => res.send("HomePage에 오신걸 환영합니다.");
-
-globalRouter.get("/", handleHome);
-
-const userRouter = express.Router();
-
-const handleEditUser = (req, res) => res.send("Edit User Page 입니다.");
-
-userRouter.get("/edit", handleEditUser);
-
-const videoRouter = express.Router();
-
-const handleWatchVideo = (req, res) => res.send("watch video 페이지 입니다.");
-
-videoRouter.get("/watch", handleWatchVideo);
-
 app.use("/", globalRouter);
-app.use("/users", userRouter);
+app.use("/users", userRouter); // 여기가 시작! URL에서 /users로 요청을 하면 -> userRouter를 찾게 되는데 그건 위에 import된 곳으로 가게되지!
 app.use("/videos", videoRouter);
 
 const handleListening = () =>
