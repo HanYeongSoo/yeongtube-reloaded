@@ -1,9 +1,9 @@
 import express from "express";
+import { home, join } from "../controllers/globalController";
 
 const globalRouter = express.Router();
 
-const handleHome = (req, res) => res.send("HomePage에 오신걸 환영합니다.");
-
-globalRouter.get("/", handleHome);
+globalRouter.get("/", home);
+globalRouter.get("/join", join);
 
 export default globalRouter;

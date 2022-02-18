@@ -120,7 +120,21 @@
 
 2022-02-18
 
-	2. 
+	2. Router 직접 만들어 보기
+		.- app.use() 를 활용해서 총 3개의 큰 router를 만든다.
+		.- express.Router()로 받아온 router에서 세부 주소를 포함한 함수 및 변수를 선언한다.
+		.- 세부 주소를 위해선 app.get()이 아닌 그 router.get()으로 호출을 한다.
+
+		.- 예를 들면 URL주소가 users/edit 이면 app.use("/users", express.Router()가 선언된 변수) 로 호출 후,
+			그 안에서 router.get("edit", edit을 실행할 함수)로 선언
+		.- 코드로 보는게 더 빠를듯...
+
+	3. 2번 코드 더 깔끔하게 정리
+		.- 모듈화를 할거임
+		.- server.js에서 각 router로 이동했자나? 그러면 export를 해줘야해
+		.- defalut export 를 통해서 모듈화 시킨 router를 다른곳에서도 import해서 사용이 가능
+
+	4. 
 
 
 
