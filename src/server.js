@@ -8,18 +8,29 @@ const PORT = 4000;
 
 const app = express(); // 이 한줄이 express application을 사용할 수 있게 해줌
 const logger = morgan("dev");
-
-// const logger = (req, res, next) => {
-//   console.log(`${req.method} ${req.url}`);
-//   next();
-// };
-
-const handleHome = (req, res) => {
-  return res.send("This is home");
-};
-
 app.use(logger);
-app.get("/", handleHome); // route를 만들고 그 안에 handler를 만드는거지
+
+const globalRouter = express.Router();
+
+const handleHome = (req, res) => res.send("HomePage에 오신걸 환영합니다.");
+
+globalRouter.get("/", handleHome);
+
+const userRouter = express.Router();
+
+const handleEditUser = (req, res) => res.send("Edit User Page 입니다.");
+
+userRouter.get("/edit", handleEditUser);
+
+const videoRouter = express.Router();
+
+const handleWatchVideo = (req, res) => res.send("watch video 페이지 입니다.");
+
+videoRouter.get("/watch", handleWatchVideo);
+
+app.use("/", globalRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
 
 const handleListening = () =>
   console.log(`Server listening on port http://localhost:${PORT} 🛺`);
