@@ -5,11 +5,14 @@
 /login -> Login (로그인 페이지)
 /search -> Search (검색 페이지)
 
-/users/edit -> Edit user
-/users/delete -> Delete user
+/users/:id -> See User
+/users/logout -> Log Out
+/users/edit -> Edit My Profile
+/users/delete -> Delete My Profile
 
-/videos/watch -> Watch Video
-/videos/edit -> Edit Video
-/videos/delete -> Delete Video
+/videos/:id -> Watch Video
+/videos/:id/edit -> Edit Video
+/videos/:id/delete -> Delete Video
+/videos/upload -> Upload Video
 /videos/comment -> Comment on a Videos
 /videos/comment/delete -> Delete A Comment of a Video
