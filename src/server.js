@@ -12,8 +12,9 @@ const PORT = 4000;
 
 const app = express(); // 이 한줄이 express application을 사용할 수 있게 해줌
 const logger = morgan("dev");
-app.use(logger);
 
+app.set("view engine", "pug");
+app.use(logger);
 app.use("/", globalRouter);
 app.use("/users", userRouter); // 여기가 시작! URL에서 /users로 요청을 하면 -> userRouter를 찾게 되는데 그건 위에 import된 곳으로 가게되지!
 app.use("/videos", videoRouter);
