@@ -5,9 +5,7 @@ export const see = (req, res) => {
 };
 export const edit = (req, res) => {
   console.log(req.params);
-  return res.send(
-    `<!DOCTYPE html><html lang='ko'><head><title>Wetube</title></head><body><h1>Edit video #${req.params.id}</h1><footer>&copy;2021 Wetube -  All rights reserved</footer></body></html>`
-  );
+  return res.render("edit");
 };
 export const search = (req, res) => res.send("Search");
 export const upload = (req, res) => res.send("Upload");
