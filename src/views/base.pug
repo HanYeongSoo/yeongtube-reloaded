@@ -3,7 +3,21 @@ html(lang="ko")
     head
         title #{pageTitle} | YEONGTUBE
         link(rel="stylesheet" href="https://unpkg.com/mvp.css")
-    body 
+    body
+        header 
+            if fakeUser.loggedIn
+                small 환영합니다! #{fakeUser.name}님
+            
+            nav
+                ul 
+                    if fakeUser.loggedIn
+                        li 
+                            a(href="/logout") 로그아웃
+                    else 
+                        li 
+                            a(href="/login") 로그인
+                            
+            h1=pageTitle 
         main
             block content
             include partials/footer.pug
