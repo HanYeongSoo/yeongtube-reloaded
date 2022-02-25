@@ -216,9 +216,28 @@
 	6. Conditionals ** 살짝 중요? **
 		.- fakeUser를 생성 후 로그인 했을 시와 안했을 시 로그인이 보이는지 로그아웃이 보이는지를 위한 if문 활용
 		.- 개념 자체는 스프링에서도 했던거라 어렵진 않았음
-		.- base.pug 코드 참고
+		.- base.pug 코드 참고 하려고 했는데 삭제했으니 여기 남김
 
-	7. 
+		.- 	if fakeUser.loggedIn
+                			small 환영합니다! #{fakeUser.name}님
+            
+            			nav
+               			 ul 
+                    			if fakeUser.loggedIn
+                       			 	li 
+                           			 	a(href="/logout") 로그아웃
+                   			 else 	
+                       				 li 
+                            				a(href="/login") 로그인
+                            
+
+	7. Iteration
+		.- array를 뿌려주고 싶을 때 사용하는 방법
+		.- each 보여주고싶은  variable 이름 in videos (여긴 내가 controller에서 정한 이름)
+		.- 테이블형태로 뿌릴때 그래서 
+				ul each 보여주고싶은  variable 이름 in videos (여긴 내가 controller에서 정한 이름)
+				li=보여주고싶은 variable 이름 으로 등록을 하면 videos에 담긴 배열 형태가 video라는 변수명으로인해 쫘르륵보임
+		
 
 
 
