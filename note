@@ -240,7 +240,47 @@
 		
 
 
+2022-03-01
 
+	8. mixin 
+		.- 데이터를 받을 수 있는 partial
+		.- 어떤 목록이나 형태가 정해져있어서 자주 쓸 거 같을 때 사용
+		.- 따로 정리할 .pug를 생성 후 mixin 이름(데이터)를 선언 후 내용을 정리한다
+		.- 그리고 저걸 사용할 .pug에서는 +이름 형태로 사용
+		.- 코드로 보면
+			1_ mixin video(info)
+     				div
+       					h4=info.title
+        					ul 
+            						li #{info.rating}/5
+            						li #{info.comments} comments.
+            						li Posted #{info.createdAt}.
+            						li #{info.views} views.                         요러케 선언 후
+
+			2_ each potato in videos	 요러케 사용 (each in은 문법이고, potato라는 변수명이 아래쪽 +video(변수명과 같음)
+           				+video(potato)			( in videos에서 videos는 controller에서 선언한 변수명과 일치해야함)
+								(+video에서 video는 1_에서 선언한 mixin video와 같아야 함)
+
+2022-03-04
+*** MONGODB AND MONGOOSE ***
+	1. # 6.0 Array Database !
+		.-  
+
+	2. # 6.1 
+		.- localhost:4000/profile/edit-profile/password 라는 주소가 있다고 가정
+		================> a(href="potato") 일 경우 localhost:4000/profile/edit-profile/password/potato
+		================> a(href="/potato") 일 경우 localhost:4000/potato
+	
+2022-03-12
+
+	3. # 6.2
+		.- form전송에서 get과 post의 차이를 알아야 함
+		.- input창에서 name을 부여
+		.- get요청시에는 router.get() , post요청시에는 router.post()로 경로를 설정해줄것
+		
+	4. # 6.3
+		.- 
+		
 
 
 
